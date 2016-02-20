@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define MAXN int(1e2 + 10)
 
 int main (void)
@@ -23,13 +24,13 @@ int main (void)
      scanf("%d %d %d", &y1, &x2, &y2);
      for(int i = x1; i <= x2; i++){
       for(int j = y1; j <= y2; j++)
-        printf("%4d", a[i][j]);
+        printf("%4d",a[i][j]);
       printf("\n");
      }   
      scanf("%d", &x1);
   }
   for(int i = 0; i < n; i++) 
-     free(*(a + i));
+     free(a[i]);
   free(a);
   return 0;
 }
