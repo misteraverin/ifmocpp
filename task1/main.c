@@ -5,11 +5,10 @@
 
 int main (void)
 {
-  //int a[MAXN][MAXN];
   int n;
   scanf("%d", &n);
   n++;
-  int **a = (int **)malloc(n * sizeof(int));
+  int **a = (int **)malloc(n * sizeof(int*));
   int m = n;
   for(int i = 0; i < m; i++)
      a[i] = (int *)malloc(n * sizeof(int));
