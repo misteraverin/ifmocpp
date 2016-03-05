@@ -9,10 +9,7 @@
 
 
     int rational::gcd (int a, int b) {
-      if (b == 0)
-        return a;
-      else
-        return gcd (b, a % b);
+      return b ? gcd (b, a % b) : a;
     }
 
 
@@ -47,7 +44,7 @@
 
     rational rational::operator/(const rational &a) const{
       return rational(this->numerator * a.denominator, this -> denominator * a.numerator);        
-    }
+    }                 
 
 
     rational rational::operator+(const rational &a) const{
