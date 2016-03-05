@@ -7,6 +7,6 @@ int main(){
   rational a(1, 3);
   rational b(1, 6);
   rational c = a - b;
-  printf("%d", c.getNum());
+  printf("%d", c.getDenom());
   return 0;
 }

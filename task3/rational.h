@@ -1,3 +1,5 @@
+#ifndef rationallib
+#define retionallib
 class rational{
   private:    
    int denominator, numerator;
@@ -13,3 +15,4 @@ class rational{
     rational operator*(const rational &a) const;
     rational operator/(const rational &a) const;
 };
+#endif
