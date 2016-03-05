@@ -1,0 +1,32 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/study-notes/task3/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"D:/Mingw/bin/mingw32-make.exe" "cmTC_d1aa5/fast"
+
+Generator: execution of make failed. Make command was: "D:/Mingw/bin/mingw32-make.exe" "cmTC_d1aa5/fast"
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/study-notes/task3/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"D:/Mingw/bin/mingw32-make.exe" "cmTC_465f9/fast"
+
+Generator: execution of make failed. Make command was: "D:/Mingw/bin/mingw32-make.exe" "cmTC_465f9/fast"
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/study-notes/task3/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"D:/Mingw/bin/mingw32-make.exe" "cmTC_6c284/fast"
+
+Generator: execution of make failed. Make command was: "D:/Mingw/bin/mingw32-make.exe" "cmTC_6c284/fast"
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/study-notes/task3/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"D:/Mingw/bin/mingw32-make.exe" "cmTC_5a937/fast"
+
+Generator: execution of make failed. Make command was: "D:/Mingw/bin/mingw32-make.exe" "cmTC_5a937/fast"
+
+

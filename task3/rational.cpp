@@ -1,18 +1,14 @@
 #include "rational.h"
 
-class rational{
-  private:
-    int denominator, numerator;
 
-
-    void stabilizator(){
+    void rational::stabilizator(){
       int total = gcd(denominator, numerator);
       denominator = denominator / total;
       numerator = numerator / total;    
     }
 
 
-    int gcd (int a, int b) {
+    int rational::gcd (int a, int b) {
       if (b == 0)
         return a;
       else
@@ -20,48 +16,45 @@ class rational{
     }
 
 
-  public:
     
-    rational(int num, int denom){  
+    rational::rational(int num, int denom){  
       denominator = denom;
       numerator = num;
       stabilizator();
     }
 
 
-    rational(int num){
+    rational::rational(int num){
       numerator = num;
     }    
 
 
-    int getNum() const{
+    int rational::getNum() const{
       return numerator;
     }
 
 
-    int getDenom() const{
+    int rational::getDenom() const{
       return denominator;
     }
 
 
-    rational operator*(const rational &a) const{
+    rational rational::operator*(const rational &a) const{
       return rational(this->numerator * a.numerator, this -> denominator * a.denominator);        
     }
 
 
-    rational operator/(const rational &a) const{
+    rational rational::operator/(const rational &a) const{
       return rational(this->numerator * a.denominator, this -> denominator * a.numerator);        
     }
 
 
-    rational operator+(const rational &a) const{
+    rational rational::operator+(const rational &a) const{
       return rational(this->numerator * a.denominator + a.numerator * this->denominator, this -> denominator * a.denominator);        
     }
 
 
-    rational operator-(const rational &a) const{
+    rational rational::operator-(const rational &a) const{
       return rational(this->numerator * a.denominator - a.numerator * this->denominator, this -> denominator * a.numerator);        
     }
 
-
-};

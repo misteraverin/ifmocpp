@@ -1,0 +1,2 @@
+D:\Mingw\bin\ar.exe qc librational.a  CMakeFiles/rational.dir/rational.cpp.obj
+D:\Mingw\bin\ranlib.exe librational.a
