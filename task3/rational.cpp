@@ -53,6 +53,6 @@
 
 
     rational rational::operator-(const rational &a) const{
-      return rational(this->numerator * a.denominator - a.numerator * this->denominator, this -> denominator * a.numerator);        
+      return rational(this->numerator * a.denominator - a.numerator * this->denominator, this -> denominator * a.denominator);        
     }
 
