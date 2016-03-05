@@ -1,5 +1,5 @@
 #ifndef rationallib
-#define retionallib
+#define rationallib
 class rational{
   private:    
    int denominator, numerator;
