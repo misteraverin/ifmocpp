@@ -26,6 +26,7 @@
 
     rational::rational(int num){
       numerator = num;
+      denominator = 1;
     }    
 
 
