@@ -1,3 +1,3 @@
 # study-notes
-This repository contains assigments on cpp coursre in NRU ITMO (winter - spring 2016)
+This repository contains assigments on C++ coursre in NRU ITMO (winter - spring 2016)
 
