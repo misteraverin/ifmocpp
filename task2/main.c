@@ -107,10 +107,11 @@ char *get_str(FILE * file, int type){
     char *right_string = NULL;
     int bad = 0;
     int len = 0;
-    int size = 0;
+    int size = 1;
     char symb = fgetc(file);
     while(symb != EOF){
-        if(symb == ' '){
+      //  printf("%c", symb);
+        if(!isspace(symb)){
             if(type == 2){
                 if(isalpha(symb))
                   type = 0;
@@ -145,7 +146,7 @@ char *get_str(FILE * file, int type){
 
 
 void rewrite_file(){
-    FILE * input_file = fopen(file_name, "a+");
+    FILE * input_file = fopen(file_name, "wt");
     int i = 0;
     for(i = 0; i < telephone_book.size; i++)
         if(telephone_book.records[i].id != 0){
@@ -195,8 +196,12 @@ void delete(int id){
 
 
 void create(FILE * file, int num){
+//  printf("fddsfdsd");
   char *name = get_str(file, 0);
+//  printf("fddsfdsd");
   char *number = get_str(file, 1);
+
+ // printf("%s %s\n", name, number);
   if(name != NULL && number != NULL){
       telephone_book.size++;
       int sz = telephone_book.size - 1;
@@ -220,11 +225,14 @@ void create(FILE * file, int num){
 int main (int argc, const char *argv[])
 {
 
-  char command[20];
-
+  char command[7];
   // work with file
-  file_name = argv[1];
-  FILE * input_file = fopen(file_name, "a+");
+
+  if(argc > 1)
+    file_name = argv[1];
+  else
+    file_name = "phonebook.txt";
+  FILE * input_file = fopen(file_name, "at+");
   if(input_file == NULL){
     printf("Error: can't open this file\n");
     return EXIT_SUCCESS;
@@ -245,7 +253,7 @@ int main (int argc, const char *argv[])
   //read commands form user
   while(1){
     scanf("%s", command);
-    //printf("%s", command);
+  //  printf("%s\n", command);
     if(!strcmp(command, "find")){
       find();
     }
