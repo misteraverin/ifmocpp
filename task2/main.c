@@ -126,8 +126,8 @@ char *get_str(FILE * file, int type){
                 right_string[len] = '\0';
 
             }
-            else if((symb == '+' && len > 0) ||
-                    (type == 0) || type != 0 && symb != '(' && symb != ')' && symb != '-' && symb != '+'){
+            else if((symb == '+' && len > 0) ||(type == 0) ||
+                    ( type != 0 && symb != '(' && symb != ')' && symb != '-' && symb != '+')) {
                 bad = 1;
             }
         }
@@ -235,7 +235,7 @@ int main (int argc, const char *argv[])
   telephone_book.size = 0;
   telephone_book.records = malloc(sizeof(person) * telephone_book.size);
   int cur_id = 0;
-  while(fscanf(input_file, "%d", &cur_id) > 0){
+  while(fscanf(input_file, "%d", &cur_id) != EOF){
      create(input_file, cur_id);
   }
 
@@ -245,6 +245,7 @@ int main (int argc, const char *argv[])
   //read commands form user
   while(1){
     scanf("%s", command);
+    //printf("%s", command);
     if(!strcmp(command, "find")){
       find();
     }
@@ -259,8 +260,9 @@ int main (int argc, const char *argv[])
       change();
     }
     else if(!strcmp(command, "exit")){
+      rewrite_file();
       free(telephone_book.records);
-      return EXIT_SUCCESS;
+      return 0;
     }
     else{
       printf("Error: can't recognize the command %s\n", command);
