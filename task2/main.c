@@ -110,7 +110,6 @@ char *get_str(FILE * file, int type){
     int size = 1;
     char symb = fgetc(file);
     while(symb != EOF){
-      //  printf("%c", symb);
         if(!isspace(symb)){
             if(type == 2){
                 if(isalpha(symb))
@@ -196,12 +195,9 @@ void delete(int id){
 
 
 void create(FILE * file, int num){
-//  printf("fddsfdsd");
   char *name = get_str(file, 0);
-//  printf("fddsfdsd");
   char *number = get_str(file, 1);
 
- // printf("%s %s\n", name, number);
   if(name != NULL && number != NULL){
       telephone_book.size++;
       int sz = telephone_book.size - 1;
@@ -253,7 +249,6 @@ int main (int argc, const char *argv[])
   //read commands form user
   while(1){
     scanf("%s", command);
-  //  printf("%s\n", command);
     if(!strcmp(command, "find")){
       find();
     }
