@@ -210,7 +210,7 @@ void create(FILE * file, int num){
       rewrite_file();
   }
   else{
-    printf("Error loading %d %s %s", num, name, number);
+    printf("Error loading %d %s %s\n", num, name, number);
     free(name);
     free(number);
   }
@@ -263,7 +263,7 @@ int main (int argc, const char *argv[])
       return EXIT_SUCCESS;
     }
     else{
-      printf("Error: can't recognize the command %s", command);
+      printf("Error: can't recognize the command %s\n", command);
     }
     fflush(stdout);
   }
