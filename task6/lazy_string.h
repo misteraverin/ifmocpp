@@ -7,15 +7,25 @@
 
 #include <iostream>
 #include <memory>
-#include <cstring>
+#include <string>
+
 
 
 // class lazy_string implements copy-on-write string
 class lazy_string{
+    struct mychar{
+        friend class lazy_string;
+        operator char () const;
+        mychar &operator = (char);
+        private:
+            mychar(lazy_string *ls, size_t index);
+            const size_t index;
+            lazy_string* const ls;
+    };
     private:
         size_t begin, len;
-        std::string current;
-        lazy_string(const lazy_string &cur, size_t begin, size_t len);
+        std::shared_ptr<std::string> str_cur;
+        lazy_string(std::shared_ptr<std::string>str, size_t begin, size_t len);
     public:
 
     // @return  std::string, which contains characters from lazy_string
@@ -34,12 +44,14 @@ class lazy_string{
     // insert lazy_string into ostream
     friend std::ostream &operator<<(std::ostream &os, lazy_string &ls);
 
+
+    // for edition the element
+    mychar at(size_t pos);
+    mychar operator[](size_t pos);
     //@return character at the position in range [0..len - 1];
-    const char& at(size_t pos) const;
-
+    char at(size_t pos) const;
     //@return character at the postion lazy_strin[pos] in range [0...len - 1]
-    const char& operator[](size_t pos) const;
-
+    char operator[](size_t pos) const;
 
     // @return length of the lazy_string
     size_t  get_len() const;
